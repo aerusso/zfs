@@ -40,7 +40,7 @@ ifeq ($(BUILD_UDEB), true)
 endif
 
 	@# Embed the downstream version in the module.
-	@sed -e 's/^Version:.*/Version:      $(DEB_VERSION_UPSTREAM)/' -i.orig META
+	@sed -e 's/^Version:.*/Version:       $(DEB_VERSION_UPSTREAM)/' -i.orig META
 
 	@# Build the userland, but don't build the kernel modules.
 	dh_auto_configure -- \
