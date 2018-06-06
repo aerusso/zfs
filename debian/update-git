@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Simple script to create an appropriate changelog for a specified git
+# version `git describe` as the first parameter. Alternatively, you
+# can just put this debian directory in the source tree, and call it
+# without any arguments.
+
+set -e
+
+VERSION="$(debian/git-version.sh "$@")"
+
+dch --newversion "${VERSION}"
