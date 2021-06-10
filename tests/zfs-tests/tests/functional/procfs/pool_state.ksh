@@ -113,9 +113,9 @@ log_must zpool online $TESTPOOL $DISK1
 log_must zpool clear $TESTPOOL
 
 # Create a new pool out of a scsi_debug disk
-TESTPOOL2=testpool2
 MINVDEVSIZE_MB=$((MINVDEVSIZE / 1048576))
 load_scsi_debug $MINVDEVSIZE_MB 1 1 1 '512b'
+TESTPOOL2=testpool2
 
 SDISK=$(get_debug_device)
 host=$(get_scsi_host $SDISK)
